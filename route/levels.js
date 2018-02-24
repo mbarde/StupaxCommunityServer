@@ -1,13 +1,5 @@
 var db = require('../config/mysql.js');
 
-exports.readAll = function(req, res) {
-		var query = "SELECT * FROM levels";
-		db.connection.query(query, function(err, rows) {
-			if (err) return res.status(500).json(err);
-			return res.status(200).json(rows);
-		});
-}
-
 exports.create = function(req, res) {
 	var level = req.body.level || '';
 	var fields = ['title', 'author', 'timestamp', 'content'];
@@ -21,4 +13,12 @@ exports.create = function(req, res) {
 		if (err) return res.status(500).send(err);
 		return res.status(200).json(result.insertId);
 	});
+}
+
+exports.readAll = function(req, res) {
+		var query = "SELECT * FROM levels";
+		db.connection.query(query, function(err, rows) {
+			if (err) return res.status(500).json(err);
+			return res.status(200).json(rows);
+		});
 }
