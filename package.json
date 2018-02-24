@@ -1,0 +1,11 @@
+{
+	"name": "StupaxCommunityServer",
+  	"version": "0.0.1",
+  	"description": "Server for the game Stupax. Main purpose: Manage and deliver levels created by the community.",
+  	"main": "main.js",
+  	"dependencies": {
+  		"express": "4.16.2",
+    	"mysql": "2.9.0",
+		"body-parser": "1.18.2"
+  	}
+}
