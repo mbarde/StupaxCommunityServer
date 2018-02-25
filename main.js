@@ -30,6 +30,7 @@ var routes = {
 
 /* Configs */
 app.post('/levels/create', routes.levels.create);
-app.get('/levels/get', routes.levels.readAll);
+app.get('/levels/read/:id', routes.levels.read);
+app.get('/levels/read', 	routes.levels.readAll);
 
 app.listen(3000);
